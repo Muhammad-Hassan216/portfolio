@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+ # Ignore specific public certificate
+ /public/visionmate_certificate.pdf
 
 # debug
 npm-debug.log*
