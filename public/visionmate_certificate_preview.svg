@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+  <rect width="100%" height="100%" fill="#0b1220" />
+  <rect x="60" y="60" width="1080" height="730" rx="20" fill="#08121a" stroke="#1f2937" stroke-width="2" />
+  <text x="120" y="180" fill="#e6f7ff" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="700">VisionMate</text>
+  <text x="120" y="230" fill="#cde9ff" font-family="Helvetica, Arial, sans-serif" font-size="20">Harvard HSIL Hackathon — 2nd Runner-Up (April 2026)</text>
+  <text x="120" y="300" fill="#9fbfd9" font-family="Helvetica, Arial, sans-serif" font-size="16">This is a preview image only. For verification, contact: codewithmhassan786@gmail.com</text>
+
+  <!-- Watermark -->
+  <g opacity="0.06" transform="translate(300,420) rotate(-25)">
+    <text x="0" y="0" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="96" font-weight="700">SAMPLE</text>
+  </g>
+</svg>

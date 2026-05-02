@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-export default function CertificateViewer({ pdf, thumb }: { pdf: string; thumb?: string }) {
+export default function CertificateViewer({ pdf, thumb }: { pdf?: string; thumb?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -23,7 +23,13 @@ export default function CertificateViewer({ pdf, thumb }: { pdf: string; thumb?:
             >
               Close
             </button>
-            <iframe src={pdf} className="h-full w-full" title="Certificate preview" />
+            {thumb ? (
+              <img src={thumb} alt="Certificate preview" className="h-full w-full object-contain" />
+            ) : pdf ? (
+              <iframe src={pdf} className="h-full w-full" title="Certificate preview" />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-white/70">No preview available</div>
+            )}
           </div>
         </div>
       )}

@@ -223,7 +223,7 @@ export default function Home() {
             </p>
 
             <div className="mt-6">
-              <CertificateViewer pdf="/visionmate_certificate.pdf" />
+              <CertificateViewer thumb="/visionmate_certificate_preview.svg" />
             </div>
           </div>
         </section>
