@@ -47,6 +47,9 @@ export default function Home() {
             <Link href="#about" className="transition hover:text-white">
               About
             </Link>
+            <Link href="#services" className="transition hover:text-white">
+              Services
+            </Link>
             <Link href="#projects" className="transition hover:text-white">
               Projects
             </Link>
@@ -65,11 +68,11 @@ export default function Home() {
               Available for full-time roles, freelance projects, and contract work
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-              Building practical AI systems for web, mobile, and real-world workflows.
+              Transform your vision into intelligent products.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 sm:text-xl">
-              I design and build intelligent products from idea to deployment, including Edge-AI mobile experiences,
-              restaurant automation, and full-stack applications with strong user focus. 2nd Runner-Up at Harvard Health Systems Hackathon 2026.
+              I build production-ready AI systems, mobile applications, and automation workflows. From on-device edge AI to GenAI integrations,
+              I deliver full-stack solutions with strong UX and deployment expertise. Proven through award-winning projects and real-world deployments.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -91,7 +94,7 @@ export default function Home() {
               {[
                 { label: "Education", value: "UMT - CS, July 2026" },
                 { label: "Recognition", value: "Harvard HSIL Hackathon — 2nd Runner-Up" },
-                { label: "Current Build", value: "VisionMate" },
+                { label: "Delivery Model", value: "Full-Stack & Deployment" },
               ].map((item) => (
                 <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
                   <p className="text-xs uppercase tracking-[0.24em] text-white/45">{item.label}</p>
@@ -135,27 +138,87 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="services" className="border-t border-white/10 py-20">
+          <div className="mb-12">
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Services & Deliverables</p>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight">What I can build for you</h2>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                title: "AI & Automation Products",
+                deliverables: [
+                  "Edge AI systems (on-device inference, computer vision)",
+                  "GenAI integrations (LLM-powered workflows, chatbots, voice systems)",
+                  "Intelligent automation (process optimization, workflow management)",
+                  "Privacy-first AI solutions (on-device processing, federated learning)"
+                ]
+              },
+              {
+                title: "Mobile & Web Applications",
+                deliverables: [
+                  "Cross-platform mobile apps (Flutter)",
+                  "Native Android apps (Android Studio, Java, Kotlin)",
+                  "Website development (HTML, CSS, JavaScript)",
+                  "Responsive, accessible, and production-ready UX"
+                ]
+              },
+              {
+                title: "Backend & System Design",
+                deliverables: [
+                  "Backend development (PHP, Python, Node.js)",
+                  "Database design & optimization (SQL, NoSQL)",
+                  "API development & integration (REST, webhooks)",
+                  "Admin panels, dashboards, and management systems"
+                ]
+              },
+              {
+                title: "Domain Expertise",
+                deliverables: [
+                  "Assistive technology & accessibility-first design",
+                  "Restaurant & hospitality automation",
+                  "E-commerce & order management systems",
+                  "Proof-of-concept to production pipeline"
+                ]
+              }
+            ].map((service, idx) => (
+              <div key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur hover:border-cyan-300/30 transition">
+                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <ul className="mt-4 space-y-3">
+                  {service.deliverables.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-white/70">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-cyan-300 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="about" className="border-t border-white/10 py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div>
               <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">About</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">I build products that feel practical, not just impressive.</h2>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Engineering with purpose, shipping with impact.</h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/70">
-                My focus is on shipping polished systems that combine AI, automation, and strong UX. I care about edge inference,
-                deployment simplicity, and workflows people can actually use in production.
+                I focus on delivering production-ready systems that solve real problems. Every project combines cutting-edge AI/automation with practical UX,
+                thoughtful design, and deployment expertise. From concept through scaling, I build products people actually want to use.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Edge-AI",
-                "Flutter Mobile Apps",
-                "GenAI / LLMs",
-                "System Design",
-                "Computer Vision",
-                "Automation Workflows",
-                "Privacy-first AI",
+                "Edge-AI & Computer Vision",
+                "Flutter (Cross-platform Mobile)",
+                "Android Studio (Native Apps)",
+                "PHP Backend Development",
+                "HTML, CSS, JavaScript",
                 "Full-Stack Development",
+                "E-commerce & Order Systems",
+                "Automation Workflows",
               ].map((skill) => (
                 <div key={skill} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/86 backdrop-blur">
                   {skill}
@@ -168,12 +231,12 @@ export default function Home() {
         <section id="projects" className="border-t border-white/10 py-20">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Projects</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Selected work</h2>
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Portfolio</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Featured Projects</h2>
             </div>
             <p className="max-w-2xl text-sm leading-7 text-white/65">
-              The current portfolio emphasizes two main systems: a cross-platform assistive mobile app and a restaurant receptionist
-              automation flow. Both are designed around practical deployment and strong user value.
+              Award-winning products spanning assistive AI, automation workflows, and full-stack e-commerce. Each demonstrates end-to-end delivery,
+              from research and prototyping to production deployment and user validation.
             </p>
           </div>
 
@@ -217,10 +280,17 @@ export default function Home() {
           
           {/* Awards & Media */}
           <div className="mt-12 rounded-2xl border border-white/8 bg-white/5 p-6">
-            <h3 className="text-lg font-semibold">Awards & Recognition</h3>
-            <p className="mt-2 text-sm text-white/70">
-              VisionMate — Harvard HSIL Hackathon, 2nd Runner-Up (April 2026).
-            </p>
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-lg font-semibold">Awards & Recognition</h3>
+                <p className="mt-2 text-sm text-white/70">
+                  VisionMate — Harvard HSIL Hackathon, 2nd Runner-Up (April 2026). Recognized for innovation in assistive AI and accessibility-first engineering.
+                </p>
+              </div>
+              <span className="ml-4 inline-flex items-center rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-semibold text-cyan-200 whitespace-nowrap">
+                ✓ Award Winner
+              </span>
+            </div>
 
             <div className="mt-6">
               <CertificateViewer />
@@ -231,10 +301,11 @@ export default function Home() {
         <section id="contact" className="border-t border-white/10 py-20">
           <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 to-white/4 p-8 md:p-12">
             <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Contact</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Open to opportunities and collaborations.</h2>
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Let's Build Together</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight">Ready to turn your idea into reality.</h2>
               <p className="mt-5 text-base leading-8 text-white/70">
-                If you want to discuss AI systems, mobile experiences, or product engineering work, I am happy to connect.
+                Whether you need a full-stack AI product, mobile application, automation system, or technical consultation,
+                I'm ready to discuss your vision and deliver results. Let's explore what we can build together.
               </p>
             </div>
 
