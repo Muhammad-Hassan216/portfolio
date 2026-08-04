@@ -2,30 +2,58 @@ import Link from "next/link";
 import CertificateViewer from "./components/CertificateViewer";
 
 export default function Home() {
-  const projects = [
+  const projects: Array<{
+    name: string;
+    description: string;
+    impact: string;
+    technologies: string[];
+    github: string;
+    demo?: string;
+  }> = [
     {
       name: "VisionMate",
       description:
         "Flutter-based assistive mobile system with on-device obstacle detection, offline face recognition, turn-by-turn voice navigation, and guardian safety sync. Currently preparing for deployment; competed in the Harvard HSIL Hackathon and awarded 2nd Runner-Up.",
+      impact:
+        "Selected as 2nd Runner-Up at Harvard HSIL and positioned for deployment as an accessibility-first assistive AI product.",
       technologies: ["Flutter", "Edge AI", "TensorFlow Lite", "Accessibility"],
       github: "https://github.com/Muhammad-Hassan216/VisionMate",
-      demo: "#",
     },
     {
       name: "AI Voice Receptionist",
       description:
         "Work-in-progress: Generative AI receptionist prototype. Partial reservation and order capture implemented; continuing development to complete full call handling flows.",
+      impact:
+        "Established a reusable voice automation foundation for reservation and order capture workflows with a clear path to full call handling.",
       technologies: ["Python", "Flask", "Twilio", "WhatsApp", "NLP"],
       github: "https://github.com/Muhammad-Hassan216/AI-Voice-Receptionist-",
-      demo: "#",
     },
     {
       name: "The Body Fragrances",
       description:
         "Fragrance business platform built as an Android Studio Java app with order booking and transaction flows, backed by a PHP admin panel, plus a separate HTML/CSS/JS front-end website.",
+      impact:
+        "Delivered a complete customer ordering and business admin flow that supports both sales and operational management.",
       technologies: ["Java", "Android Studio", "PHP", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/Muhammad-Hassan216/The-Body-Fragrances",
-      demo: "#",
+    },
+    {
+      name: "AI Content Forensics System",
+      description:
+        "Explainable AI-generated text detector with a live Streamlit UI, CLI demo, and batch REST API. Classifies text as AI-generated vs. human-written and surfaces token-level feature contributions instead of a black-box label. Ships with a trained sklearn model plus a pure-Python offline fallback, and includes production deploy configs (Render/Streamlit Cloud).",
+      impact:
+        "Brings transparent AI text verification to real-world review workflows with deployment-ready demo and API packaging.",
+      technologies: ["Python", "scikit-learn", "Streamlit", "Flask", "Explainable AI"],
+      github: "https://github.com/Muhammad-Hassan216/AI-Content-Forensics-System",
+    },
+    {
+      name: "UMT Campus Support Chatbot",
+      description:
+        "Led development of a handbook-verified RAG chatbot for campus support queries within a 4-person team, engineered to eliminate hallucinated answers by sourcing strictly from the official UMT handbook and verified contacts. Audited and pruned the corpus to 35 verified chunks, and built a 24-question risk-tiered benchmark with mandatory crisis-escalation safety logic.",
+      impact:
+        "Reduced hallucination risk through handbook-grounded retrieval and a safety-first benchmark that protects high-risk campus support scenarios.",
+      technologies: ["Python", "RAG", "LLM Integration", "Safety Design"],
+      github: "https://github.com/Muhammad-Hassan216/Umt-Chatbot",
     },
   ];
 
@@ -244,35 +272,51 @@ export default function Home() {
             {projects.map((project, idx) => (
               <article
                 key={idx}
-                className="group rounded-[1.75rem] border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/7"
+                className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/7"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.28em] text-white/40">Project {idx + 1}</p>
-                    <h3 className="mt-2 text-2xl font-semibold">{project.name}</h3>
+                <div className="relative h-44 overflow-hidden bg-gradient-to-br from-cyan-500/20 via-sky-400/8 to-indigo-500/20">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(103,232,249,0.3),_transparent_40%),radial-gradient(circle_at_bottom_right,_rgba(129,140,248,0.25),_transparent_45%)]" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 text-xs uppercase tracking-[0.36em] text-cyan-100 backdrop-blur-sm">
+                      {project.name}
+                    </div>
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
-                    Featured
-                  </span>
                 </div>
 
-                <p className="mt-4 text-sm leading-7 text-white/70">{project.description}</p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
-                      {tech}
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.28em] text-white/40">Project {idx + 1}</p>
+                      <h3 className="mt-2 text-2xl font-semibold">{project.name}</h3>
+                    </div>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
+                      Featured
                     </span>
-                  ))}
-                </div>
+                  </div>
 
-                <div className="mt-6 flex gap-4 text-sm font-medium">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-cyan-200 transition hover:text-white">
-                    GitHub →
-                  </a>
-                  <a href={project.demo} className="text-white/70 transition hover:text-white">
-                    Demo →
-                  </a>
+                  <p className="mt-4 text-sm leading-7 text-white/70">{project.description}</p>
+                  <p className="mt-3 text-sm leading-6 text-cyan-100/90">
+                    <span className="font-semibold text-white">Result / Impact:</span> {project.impact}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex gap-4 text-sm font-medium">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-cyan-200 transition hover:text-white">
+                      GitHub →
+                    </a>
+                    {project.demo ? (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-white/70 transition hover:text-white">
+                        Demo →
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </article>
             ))}
@@ -293,7 +337,9 @@ export default function Home() {
             </div>
 
             <div className="mt-6">
-              <CertificateViewer />
+              <p className="text-sm text-white/60">
+                No certificate file has been added to the site yet, so the certificate action is temporarily hidden until a real asset is provided.
+              </p>
             </div>
           </div>
         </section>

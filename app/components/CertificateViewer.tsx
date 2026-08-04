@@ -10,7 +10,12 @@ function toDataUri(svg: string) {
 
 export default function CertificateViewer({ pdf, thumb }: { pdf?: string; thumb?: string }) {
   const [open, setOpen] = useState(false);
-  const previewSrc = thumb ?? toDataUri(previewSvg);
+
+  if (!pdf && !thumb) {
+    return null;
+  }
+
+  const previewSrc = thumb ?? (pdf ? undefined : toDataUri(previewSvg));
 
   return (
     <div>
